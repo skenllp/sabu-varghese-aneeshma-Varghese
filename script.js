@@ -147,7 +147,7 @@ $('#open').focus({ preventScroll: true });
 
 /* Optional links, WhatsApp */
 const wmsg = encodeURIComponent('You are invited to the wedding of Sabu & Aneeshma on 27 December 2026. ' + location.href);
-$('#wa').href = 'https://wa.me/?text=' + wmsg;
+// WhatsApp icon (disabled): $('#wa').href = 'https://wa.me/?text=' + wmsg;
 const on = (id, href) => { const el = $(id); if (el && href) { el.href = href; el.hidden = false; } };
 /* RSVP / Send Wish (disabled)
 if (CONFIG.whatsapp) {
