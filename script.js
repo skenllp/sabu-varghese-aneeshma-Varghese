@@ -134,17 +134,27 @@ $$('#cal, #qcal').forEach(b => b.addEventListener('click', () => {
 /* Splash */
 const splash = $('#splash');
 document.body.classList.add('noscroll');
-$('#open').addEventListener('click', () => { splash.classList.add('gone'); document.body.classList.remove('noscroll'); setTimeout(() => splash.remove(), 1000); });
+const bgm = $('#bgm'), mute = $('#mute');
+function setMusic(on) {
+  if (on) { const p = bgm.play(); p && p.catch(() => setMusic(false)); } else bgm.pause();
+  const playing = on && !bgm.paused || on;
+  mute.classList.toggle('muted', !on); mute.setAttribute('aria-pressed', String(on)); mute.setAttribute('aria-label', on ? 'Pause music' : 'Play music');
+}
+mute.addEventListener('click', () => setMusic(bgm.paused));
+document.addEventListener('visibilitychange', () => { if (document.hidden && !bgm.paused) bgm.pause(), mute.classList.add('muted'); });
+$('#open').addEventListener('click', () => { mute.hidden = false; setMusic(true); splash.classList.add('gone'); document.body.classList.remove('noscroll'); setTimeout(() => splash.remove(), 1000); });
 $('#open').focus({ preventScroll: true });
 
 /* Optional links, WhatsApp */
 const wmsg = encodeURIComponent('You are invited to the wedding of Sabu & Aneeshma on 27 December 2026. ' + location.href);
 $('#wa').href = 'https://wa.me/?text=' + wmsg;
 const on = (id, href) => { const el = $(id); if (el && href) { el.href = href; el.hidden = false; } };
+/* RSVP / Send Wish (disabled)
 if (CONFIG.whatsapp) {
   const w = t => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(t)}`;
   on('#wish', w('Congratulations Sabu & Aneeshma! Wishing you a blessed married life.')); on('#qwish', $('#wish').href);
   on('#rsvp', w('RSVP: I will be attending the wedding on 27 December 2026.')); on('#qrsvp', $('#rsvp').href);
   $('#wishRow').hidden = false;
 }
+*/
 on('#qlive', CONFIG.liveUrl); on('#qcard', CONFIG.cardUrl);
