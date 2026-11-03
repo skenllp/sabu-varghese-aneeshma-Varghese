@@ -8,8 +8,8 @@ const CONFIG = {
   videoYouTube: '',                          // YouTube video ID, e.g. 'dQw4w9WgXcQ'
   whatsapp: '',                              // e.g. '919XXXXXXXXX' (country code, no +) enables Send Wish / RSVP
   liveUrl: '', cardUrl: '',                  // optional live-stream / invitation-card links
-  contact: { name: '', phone: '', display: '' },  // e.g. { name:'Name', phone:'919XXXXXXXXX', display:'+91 9XXXX XXXXX' } shows the contact card
-  compliments: [],                           // e.g. ['With best compliments from ...']
+  contact: { name: 'Mrs. Reji Varghese', phone: '919539829682', display: '+91 95398 29682' },  // e.g. { name:'Name', phone:'919XXXXXXXXX', display:'+91 9XXXX XXXXX' } shows the contact card
+  compliments: ['With best compliments from', 'Shaji Varghese', 'Sali Joe', 'Joe Jose', 'Ashik Aamy Maria', 'Vinu Varghese'],                           // e.g. ['With best compliments from ...']
   hashtag: '',                               // e.g. '#SabuAneeshma'
   videoSrc: ''                               // e.g. 'assets/our-story.mp4'; empty = section hidden
 };

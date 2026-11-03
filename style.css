@@ -310,3 +310,53 @@ section{padding:clamp(5rem,11vw,8.5rem) 0}
 .fab{position:fixed;right:16px;z-index:60;width:50px;height:50px;border-radius:50%;background:rgba(84,32,36,.92);border:1.5px solid var(--gold);display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.25);transition:.3s}
 .fab.map{bottom:16px}.fab.up{bottom:76px}.fab[hidden]{display:none}
 .fab:hover{background:var(--terracotta);transform:translateY(-2px)}
+.comp{margin-top:.5rem}.comp p:first-child{font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--apricot);margin-bottom:.6rem}
+.comp p:not(:first-child){font-size:1rem;letter-spacing:.04em}
+
+/* v8: soft floral backgrounds */
+.bg{position:absolute;pointer-events:none;user-select:none;z-index:0;opacity:.28}
+.bg.bl,.bg.br{width:clamp(150px,36vw,420px);top:50%;transform:translateY(-50%)}
+.bg.bl{left:0}.bg.br{right:0}
+.bg.top{top:22%}.bg.low{top:auto;bottom:4%;transform:none}
+.bg.petals{inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
+.bg.edge{left:50%;bottom:0;transform:translateX(-50%);width:min(1100px,100%);opacity:.55}
+.gallery{padding-bottom:clamp(9rem,22vw,15rem)}
+@media(max-width:600px){.bg.bl,.bg.br{width:46vw;opacity:.22}.bg.petals{opacity:.4}}
+
+/* v9: opening screen cohesion */
+.splash{--fw:clamp(112px,32vw,160px)}
+.splash .fl{width:clamp(130px,38vw,290px);filter:drop-shadow(0 0 16px rgba(243,227,209,.22))}
+.splash .fl.tl{top:-4px;left:-4px}.splash .fl.br{bottom:-4px;right:-4px}
+.splash-bg{filter:blur(10px) saturate(.8);inset:-20px}
+.splash-in{padding-top:5rem;padding-bottom:4rem}
+.splash .faces{display:grid;grid-template-columns:var(--fw) 2.2rem var(--fw);gap:.8rem;align-items:center;justify-items:center}
+.splash .faces .face{width:var(--fw)}
+.splash .fnames{display:grid;grid-template-columns:var(--fw) 2.2rem var(--fw);gap:.8rem;justify-items:center}
+.splash .fnames span:first-child{grid-column:1}.splash .fnames span:last-child{grid-column:3}
+.splash .scard{background:rgba(84,32,36,.55)}
+
+/* v10: velvet texture + floral frame (opening screen) */
+.splash{--W:clamp(140px,40vw,300px)}
+.splash-bg{inset:0;filter:none;animation:none;background:var(--wine) url(assets/velvet.jpg) center/cover}
+.splash::before{inset:calc(var(--W)*.094) calc(var(--W)*.079) calc(var(--W)*.102);border:1.5px solid #bd8240;z-index:1}
+.splash::after{display:none}
+.fr{position:fixed;z-index:1;pointer-events:none;opacity:0;animation:flin 2s .3s ease forwards}
+.fr.tl{top:0;left:0;width:var(--W)}.fr.tr{top:0;right:0;width:var(--W)}
+.fr.bl{bottom:0;left:0;width:calc(var(--W)*.93)}.fr.br{bottom:0;right:0;width:calc(var(--W)*.94)}
+.splash-in{padding-top:calc(var(--W)*.85 + 1.5rem);padding-bottom:calc(var(--W)*.85 + 1rem)}
+.splash .scard{background:rgba(84,32,36,.45)}
+@media(prefers-reduced-motion:reduce){.fr{opacity:1!important}}
+
+/* v11: velvet / suede textures, gold seams, monogram, opening-screen spacing */
+.velvet,.thanks,.foot{background:var(--wine) url(assets/velvet-wide.jpg) center/cover}
+.velvet>section{background:none}
+.forever{background:var(--terracotta) url(assets/terracotta.jpg) center/cover}
+.wt::before,.wb::after{display:none}
+.seam{height:0;position:relative;z-index:8;overflow:visible}
+.seam img{position:absolute;left:50%;top:0;transform:translate(-50%,-50%);width:min(620px,86vw);height:auto;pointer-events:none}
+.mono-img{display:block;margin:0 auto;width:clamp(120px,32vw,170px);height:auto}
+.closing .mono-img{width:clamp(130px,34vw,190px);margin-bottom:1rem}
+.splash{--W:clamp(120px,34vw,300px)}
+.splash-in{padding-top:2.2rem;padding-bottom:calc(var(--W)*1 + 1.4rem);gap:.85rem}
+.splash .mono-img{width:clamp(110px,30vw,150px)}
+@media(max-height:720px){.splash{--fw:96px}.splash .mono-img{width:100px}.splash-in{gap:.6rem}}
