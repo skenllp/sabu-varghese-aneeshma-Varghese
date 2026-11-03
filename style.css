@@ -360,3 +360,20 @@ section{padding:clamp(5rem,11vw,8.5rem) 0}
 .splash-in{padding-top:2.2rem;padding-bottom:calc(var(--W)*1 + 1.4rem);gap:.85rem}
 .splash .mono-img{width:clamp(110px,30vw,150px)}
 @media(max-height:720px){.splash{--fw:96px}.splash .mono-img{width:100px}.splash-in{gap:.6rem}}
+
+/* v12: flowers fully visible, placed in section corners */
+.bg{opacity:1;z-index:0}
+.bg.bl,.bg.br{width:clamp(96px,26vw,340px);top:auto;bottom:auto;transform:none}
+.bg.bl{left:0}.bg.br{right:0}
+.bg.t{top:0}.bg.b{bottom:0}
+.bg.petals{opacity:.8}
+.bg.edge{opacity:1}
+.bg.fr{width:clamp(100px,26vw,230px)}
+.bg.fr.tl{top:0;left:0}.bg.fr.tr{top:0;right:0}.bg.fr.bl{bottom:0;left:0}.bg.fr.br{bottom:0;right:0}
+.velvet{position:relative;overflow:hidden}
+.velvet>section{position:relative;z-index:1}
+@media(max-width:600px){.bg.bl,.bg.br{width:26vw;opacity:1}.bg.petals{opacity:.7}}
+
+/* v13: peach/cream flowers for the dark sections */
+.bg.flip{transform:scaleX(-1)}
+.garland-d{display:block;width:min(560px,88%);margin:0 auto 1.6rem}
