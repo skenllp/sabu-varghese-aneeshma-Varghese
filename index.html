@@ -25,6 +25,8 @@
 <body>
 <div class="splash" id="splash" role="dialog" aria-label="Invitation">
   <div class="splash-bg"></div>
+  <img class="fl tl" src="assets/corner-frame.png" alt="">
+  <img class="fl br" src="assets/corner-frame.png" alt="">
   <div class="splash-in">
     <p class="mono-lg">S <i>&amp;</i> A</p>
     <p class="eyebrow gold">You are invited</p>
@@ -85,6 +87,21 @@
     <!-- RSVP / Send Wish (disabled): <div class="actions rv" id="wishRow" hidden><a class="btn" id="wish" target="_blank" rel="noopener">Send Wish</a><a class="btn ghost" id="rsvp" target="_blank" rel="noopener">RSVP</a></div> -->
   </div>
 </section>
+<section class="paper story" id="story">
+  <div class="wrap story-in">
+    <div class="ph rv"><img data-par src="assets/couple-05.jpg" alt="Sabu and Aneeshma walking hand in hand, smiling at each other" style="object-position:50% 40%" loading="lazy"></div>
+    <div class="story-txt">
+      <p class="eyebrow dk rv">Our Story</p>
+      <h2 class="h2 rv">A Note From Us</h2>
+      <!-- EDIT THIS NOTE: replace with the couple's own words -->
+      <p class="rv">Every love story is beautiful, and we believe ours was gently written by God&rsquo;s own hand.</p>
+      <p class="rv">Through every conversation, every shared laugh and every prayer, we found ourselves drawing closer &mdash; discovering not only the joy of being together, but also the peace of knowing that God had guided our paths toward one another.</p>
+      <p class="rv">At the heart of our story is faith. Our relationship has been built on prayer, trust, and the belief that the best things in life unfold in His perfect timing.</p>
+      <p class="rv">As we step into our forever, we are grateful that the dreams we prayed for are coming true. We look forward to walking hand in hand into the future He has prepared for us, and we would be blessed to have you with us.</p>
+      <p class="script sign rv">Sabu &amp; Aneeshma</p>
+    </div>
+  </div>
+</section>
 <div class="mq" aria-hidden="true"><div class="track"><span>Celebration</span><em><svg width="26" height="26" viewBox="0 0 64 64" fill="none" stroke="#F3E3D1" stroke-width="3"><circle cx="24" cy="38" r="14"/><circle cx="40" cy="38" r="14"/></svg></em><span>Joyful Union</span><em><svg width="24" height="24" viewBox="0 0 24 24" fill="#F3E3D1"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 20 10c0 6-8 11-8 11z"/></svg></em></div></div>
 
 <section class="forever" id="forever">
@@ -101,6 +118,8 @@
     <p class="date rv">Sunday, 27 December 2026</p>
     <div class="cards">
       <article class="card rv">
+        <img class="cfl tl" src="assets/corner-frame.png" alt="">
+        <img class="cfl br" src="assets/corner-frame.png" alt="">
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#C58D49" stroke-width="1.3" aria-hidden="true"><path d="M12 2v6M9 5h6M5 22V12l7-4 7 4v10zM10 22v-6h4v6"/></svg>
         <p class="eyebrow dk">Wedding Ceremony</p>
         <h3>HOLY MATRIMONY</h3>
@@ -110,6 +129,8 @@
         <a class="btn" target="_blank" rel="noopener" href="https://maps.app.goo.gl/Ms4STCFGvMM6Kv5x7">View Location</a>
       </article>
       <article class="card rv">
+        <img class="cfl tl" src="assets/corner-frame.png" alt="">
+        <img class="cfl br" src="assets/corner-frame.png" alt="">
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#C58D49" stroke-width="1.3" aria-hidden="true"><path d="M8 2h8l-1 8a3 3 0 0 1-6 0zM12 13v9M8 22h8"/></svg>
         <p class="eyebrow dk">Wedding Reception</p>
         <h3>RECEPTION</h3>
@@ -156,9 +177,11 @@
 <div id="videoMount"></div>
 
 <section class="paper closing" id="closing">
+  <img class="cl tl" src="assets/corner-bouquet.png" alt="">
+  <img class="cl br" src="assets/corner-bouquet.png" alt="">
   <div class="wrap center">
     <div class="mono big-mono rv">S&amp;A</div>
-    <div class="rule rv"></div>
+    <img class="garland rv" src="assets/garland.png" alt="" loading="lazy">
     <h2 class="h2 rv">With Love &amp; Blessings</h2>
     <p class="rv">Your presence and prayers will make our special day even more meaningful.</p>
     <p class="script rv">Sabu Varghese<br>&amp;<br>Aneeshma Varghese</p>
@@ -170,10 +193,29 @@
     <p class="toast" id="toast" role="status"></p>
   </div>
 </section>
+<section class="wine wt wb thanks" id="thanks">
+  <div class="wrap center">
+    <p class="eyebrow gold rv">With Gratitude</p>
+    <p class="it rv">Our hearts are so full of love and gratitude as we begin our life together.</p>
+    <p class="it rv">We would be truly happy and honoured to have you join us.</p>
+    <p class="it rv">Your love, prayers and presence mean everything to us, and we cannot wait to celebrate this special day with the people we cherish most.</p>
+    <p class="gname rv">Sabu &amp; Aneeshma</p>
+    <div class="contact rv" id="contact" hidden>
+      <p class="eyebrow gold">Contact</p>
+      <p class="it">For any questions or further information about our special day, please kindly contact:</p>
+      <a class="btn cbtn" id="contactBtn" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21l1.6-4.8A8.5 8.5 0 1 1 8 19.6z"/></svg><span></span></a>
+      <p class="eyebrow cname" id="cname"></p>
+    </div>
+    <div class="comp" id="comp"></div>
+    <p class="tag" id="tag" hidden></p>
+  </div>
+</section>
 <div class="mq" aria-hidden="true"><div class="track"><span>Love</span><em><svg width="24" height="24" viewBox="0 0 24 24" fill="#F3E3D1"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 20 10c0 6-8 11-8 11z"/></svg></em><span>Happiness</span><em><svg width="24" height="24" viewBox="0 0 24 24" fill="#F3E3D1"><path d="M12 2l2.2 6.8H21l-5.5 4 2.1 6.7L12 15.6 6.4 19.5l2.1-6.7L3 8.8h6.8z"/></svg></em><span>Forever</span><em><svg width="24" height="24" viewBox="0 0 24 24" fill="#F3E3D1"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 20 10c0 6-8 11-8 11z"/></svg></em></div></div>
 <footer class="foot wt"><p>© 2026 Sabu &amp; Aneeshma · With love &amp; blessings</p></footer>
 </main>
 
+<a class="fab map" href="https://maps.app.goo.gl/Ms4STCFGvMM6Kv5x7" target="_blank" rel="noopener" aria-label="Ceremony location"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C58D49" stroke-width="1.6" stroke-linejoin="round"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.700-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></a>
+<button class="fab up" id="fabUp" aria-label="Back to top" hidden><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C58D49" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
   <button class="lb-x" id="lbx" aria-label="Close">×</button>
   <button class="lb-n p" id="lbp" aria-label="Previous">‹</button>

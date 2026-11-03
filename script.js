@@ -8,6 +8,9 @@ const CONFIG = {
   videoYouTube: '',                          // YouTube video ID, e.g. 'dQw4w9WgXcQ'
   whatsapp: '',                              // e.g. '919XXXXXXXXX' (country code, no +) enables Send Wish / RSVP
   liveUrl: '', cardUrl: '',                  // optional live-stream / invitation-card links
+  contact: { name: '', phone: '', display: '' },  // e.g. { name:'Name', phone:'919XXXXXXXXX', display:'+91 9XXXX XXXXX' } shows the contact card
+  compliments: [],                           // e.g. ['With best compliments from ...']
+  hashtag: '',                               // e.g. '#SabuAneeshma'
   videoSrc: ''                               // e.g. 'assets/our-story.mp4'; empty = section hidden
 };
 const PHOTOS = [
@@ -158,3 +161,17 @@ if (CONFIG.whatsapp) {
 }
 */
 on('#qlive', CONFIG.liveUrl); on('#qcard', CONFIG.cardUrl);
+
+/* Gratitude: contact, compliments, hashtag (shown only when filled in CONFIG) */
+if (CONFIG.contact.phone) {
+  const b = $('#contactBtn'); b.href = 'https://wa.me/' + CONFIG.contact.phone.replace(/\D/g, '');
+  $('span', b).textContent = CONFIG.contact.display || CONFIG.contact.phone;
+  $('#cname').textContent = CONFIG.contact.name; $('#contact').hidden = false;
+}
+CONFIG.compliments.forEach(t => { const p = document.createElement('p'); p.textContent = t; $('#comp').appendChild(p); });
+if (CONFIG.hashtag) { $('#tag').textContent = CONFIG.hashtag; $('#tag').hidden = false; }
+
+/* Back to top */
+const fabUp = $('#fabUp');
+fabUp.addEventListener('click', () => scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }));
+addEventListener('scroll', () => { fabUp.hidden = scrollY < 700; }, { passive: true });

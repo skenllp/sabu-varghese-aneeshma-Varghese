@@ -228,7 +228,7 @@ section{padding:clamp(5rem,11vw,8.5rem) 0}
 .who h3.script::after{content:"";display:block;width:54px;height:1px;background:var(--gold);margin:.8rem auto 0}
 .who p{max-width:32ch;font-size:1rem;line-height:1.7}
 .who p.small{margin-top:.5rem}
-.rings-ic{margin:calc(clamp(150px,42vw,230px)/2 - 45px) auto 0}
+.rings-ic{margin:calc(clamp(160px,44vw,240px)/2 - 45px) auto 0}
 .who.rv .face{transform:scale(.9);transition:transform 1.4s cubic-bezier(.22,.61,.36,1)}
 .who.in .face{transform:none}
 
@@ -267,3 +267,46 @@ section{padding:clamp(5rem,11vw,8.5rem) 0}
 .mute{position:fixed;top:14px;right:14px;z-index:60;width:46px;height:46px;border-radius:50%;background:rgba(84,32,36,.85);border:1.5px solid var(--gold);display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(4px);transition:.3s}
 .mute[hidden]{display:none}.mute:hover{background:var(--terracotta)}
 .mute .off{display:none}.mute.muted .on{display:none}.mute.muted .off{display:block}
+
+/* v4: tighter face crops, larger circles */
+.face{background-size:cover;background-position:center;width:clamp(112px,32vw,160px)}
+.face.g{background-image:url(assets/face-groom.jpg)}
+.face.b{background-image:url(assets/face-bride.jpg)}
+.face.lg{width:clamp(160px,44vw,240px)}
+.faces{gap:.8rem}
+.rings-ic{margin-top:calc(clamp(160px,44vw,240px)/2 - 45px)}
+
+/* v5: floral corners (opening, event cards, closing) */
+.splash .fl{position:fixed;width:clamp(120px,32vw,230px);z-index:1;pointer-events:none;opacity:0;animation:flin 2.2s .5s ease forwards}
+.splash .fl.tl{top:6px;left:6px}.splash .fl.br{bottom:6px;right:6px;transform:rotate(180deg)}
+@keyframes flin{to{opacity:1}}
+.card{position:relative}
+.cfl{position:absolute;width:64px;pointer-events:none}
+.cfl.tl{top:5px;left:5px}.cfl.br{bottom:5px;right:5px;transform:rotate(180deg)}
+.cl{position:absolute;width:clamp(110px,28vw,300px);pointer-events:none;z-index:1}
+.cl.tl{top:0;left:0}.cl.br{bottom:0;right:0;transform:rotate(180deg)}
+.garland{width:min(520px,88%);margin:0 auto 1.2rem}
+@media(prefers-reduced-motion:reduce){.splash .fl{opacity:1!important}}
+
+/* v6: our story note */
+.story-in{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.story .ph{max-width:440px;width:100%;margin-inline:auto}
+.story-txt p{font-family:var(--serif);font-size:clamp(1.15rem,2.6vw,1.4rem);line-height:1.85;margin-bottom:1.2rem;color:var(--wine)}
+.story-txt .eyebrow{font-family:var(--sans);font-size:.74rem;margin-bottom:0}
+.story-txt .h2{margin-bottom:1.6rem}
+.story-txt .script.sign{font-family:var(--script);font-size:clamp(2rem,5vw,2.8rem);color:var(--terracotta);margin:1.2rem 0 0;line-height:1.2}
+@media(max-width:820px){.story-in{grid-template-columns:1fr}.story-txt{text-align:center}}
+
+/* v7: gratitude + floating buttons */
+.thanks{padding-block:clamp(6rem,12vw,9.5rem)}
+.thanks .it{font-family:var(--serif);font-style:italic;font-size:clamp(1.25rem,3.4vw,1.7rem);line-height:1.6;max-width:640px;margin:0 auto 1.6rem;color:var(--ivory)}
+.gname{font-family:var(--serif);font-size:clamp(1.9rem,6vw,3rem);letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin:2.4rem 0 2rem}
+.contact{max-width:520px;margin:0 auto 2rem;padding:2.2rem 1.4rem;border:1px solid rgba(197,141,73,.55);border-radius:22px;background:rgba(243,227,209,.05)}
+.contact .eyebrow{margin-bottom:1rem}.contact .it{font-size:1.2rem}
+.cbtn{display:inline-flex;align-items:center;gap:.7rem;border-radius:40px;background:linear-gradient(135deg,var(--terracotta),#c2653f);color:var(--ivory);letter-spacing:.08em;font-size:.95rem;text-transform:none;margin:.4rem 0 1.2rem}
+.cname{color:var(--ivory)}
+.comp p{font-size:.95rem;color:var(--ivory);margin:.35rem 0;opacity:.92}
+.tag{margin-top:1.4rem;letter-spacing:.2em;color:var(--gold)}
+.fab{position:fixed;right:16px;z-index:60;width:50px;height:50px;border-radius:50%;background:rgba(84,32,36,.92);border:1.5px solid var(--gold);display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.25);transition:.3s}
+.fab.map{bottom:16px}.fab.up{bottom:76px}.fab[hidden]{display:none}
+.fab:hover{background:var(--terracotta);transform:translateY(-2px)}
